@@ -15,6 +15,8 @@
  ******************************************************************************/
 package com.univocity.parsers.annotations.meta;
 
+import java.lang.reflect.Field;
+
 /**
  * @author Univocity Software Pty Ltd - <a href="mailto:dev@univocity.com">dev@univocity.com</a>
  */
@@ -36,5 +38,23 @@ public class ReplacementBean {
 	}
 
 	public ReplacementBean() {
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		
+		sb.append(a != null ? a : "").append(",");
+		
+		if (b != null) {
+		    sb.append(b);
+		}
+		sb.append(",");
+		
+		if (c != null) {
+		    sb.append(c);
+		}
+		
+		return sb.toString();
 	}
 }
