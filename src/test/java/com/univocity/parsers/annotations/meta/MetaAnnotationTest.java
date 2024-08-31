@@ -64,7 +64,7 @@ public class MetaAnnotationTest {
 		StringWriter out = new StringWriter();
 		CsvWriter writer = new CsvWriter(out, settings);
 
-		List<ReplacementBean> beans = new LinkedList<ReplacementBean>();
+		List<ReplacementBean> beans = new ArrayList<ReplacementBean>();
 
 		beans.add(new ReplacementBean("iii4", "blah blah", "`c`"));
 		beans.add(new ReplacementBean("zzz7674", "etc", "`c`"));
@@ -72,8 +72,8 @@ public class MetaAnnotationTest {
 		
 		writer.processRecordsAndClose(beans);
 		assertEquals(out.toString(), "" +
-				"iii4,BLAH BLAH,,,C\n" +
-				"zzz7674,ETC,,,C\n");
+				"iii4,BLAH BLAH,C\n" +
+				"zzz7674,ETC,C\n");
 	}
 }
 
