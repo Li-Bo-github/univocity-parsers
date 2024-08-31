@@ -74,12 +74,8 @@ public class MetaAnnotationTest {
 		String outString = out.toString();
 		String[] lines = outString.split("\n");
     
-		String[] firstLineElements = lines[0].split(",");
-		assertTrue(firstLineElements.contains("iii4", "BLAH BLAH", "C"));
-		
-		String[] secondLineElements = lines[1].split(",");
-		assertTrue(secondLineElements.contains("zzz7674", "ETC", "C"));
-
+        	assertTrue(firstLineList.contains("iii4") && firstLineList.contains("BLAH BLAH") && firstLineList.contains("C"));
+        	assertTrue(secondLineList.contains("zzz7674") && secondLineList.contains("ETC") && secondLineList.contains("C"));
 	}
 }
 
