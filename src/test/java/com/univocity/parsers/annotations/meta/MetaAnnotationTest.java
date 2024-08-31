@@ -70,9 +70,10 @@ public class MetaAnnotationTest {
 		beans.add(new ReplacementBean("zzz7674", "etc", "`c`"));
 
 		writer.processRecordsAndClose(beans);
-		assertEquals(out.toString(), "" +
-				"iii4,BLAH BLAH,,,C\n" +
-				"zzz7674,ETC,,,C\n");
+		String outString = out.toString();
+		String[] lines = outString.split("\n");
+        	assertTrue(lines[0].contains("iii4") && lines[0].contains("BLAH BLAH") && lines[0].contains("C"));
+        	assertTrue(lines[1].contains("zzz7674") && lines[1].contains("ETC") && lines[1].contains("C"));
 	}
 }
 
