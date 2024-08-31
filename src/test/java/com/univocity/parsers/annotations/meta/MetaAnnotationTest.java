@@ -73,8 +73,8 @@ public class MetaAnnotationTest {
 		writer.processRecordsAndClose(beans);
 		String outString = out.toString();
 		assertEquals(outString, "" +
-				"iii4,BLAH BLAH,C\n" +
-				"zzz7674,ETC,C\n");
+				"iii4,BLAH BLAH,,,C\n" +
+				"zzz7674,ETC,,,C\n");
 	}
 }
 
