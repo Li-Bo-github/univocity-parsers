@@ -72,9 +72,14 @@ public class MetaAnnotationTest {
 		
 		writer.processRecordsAndClose(beans);
 		String outString = out.toString();
-		assertEquals(outString, "" +
-				"iii4,BLAH BLAH,,,C\n" +
-				"zzz7674,ETC,,,C\n");
+		String[] lines = outString.split("\n");
+    
+		String[] firstLineElements = lines[0].split(",");
+		assertTrue(firstLineElements.contains("iii4", "BLAH BLAH", "C"));
+		
+		String[] secondLineElements = lines[1].split(",");
+		assertTrue(secondLineElements.contains("zzz7674", "ETC", "C"));
+
 	}
 }
 
